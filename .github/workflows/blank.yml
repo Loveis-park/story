@@ -1,0 +1,85 @@
+<font class="papago-parent"><font class="papago-source" style="display:none;"># This is a basic workflow to help you get started with Actions
+</font># 작업 시작을 도와주는 기본 워크플로우입니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">name: CI
+</font>이름: CI
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;"># Controls when the action will run.</font># 작업이 실행되는 시기를 제어합니다.</font><font class="papago-parent"><font class="papago-source" style="display:none;"> 
+</font> 
+ 
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">on:
+</font>에:
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  # Triggers the workflow on push or pull request events but only for the main branch
+</font>  # 푸시 또는 꺼내기 요청 이벤트에서 워크플로우를 트리거하지만 메인 분기에만 트리거합니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  push:
+</font>  푸시:
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    branches: [ main ]
+</font>    가지:[ 주 ]
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  pull_request:</font>  풀_요청:</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    branches: [ main ]
+</font>    가지:[ 주 ]
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  # Allows you to run this workflow manually from the Actions tab
+</font>  # 작업 탭에서 이 워크플로를 수동으로 실행할 수 있습니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  workflow_dispatch:
+</font>  Workflow_dispatch:
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;"># A workflow run is made up of one or more jobs that can run sequentially or in parallel
+</font># 워크플로우 실행은 순차적으로 또는 병렬로 실행할 수 있는 하나 이상의 작업으로 구성됩니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">jobs:
+</font>직업:
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  # This workflow contains a single job called "build"
+</font>  # 이 워크플로우에는 "빌드"라는 단일 작업이 포함되어 있습니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">  build:</font>  건설:</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    # The type of runner that the job will run on
+</font>    # 작업이 실행되는 주자의 유형
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    runs-on: ubuntu-latest
+</font>    런온: ubuntu-latest
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    # Steps represent a sequence of tasks that will be executed as part of the job
+</font>    # 단계는 작업의 일부로 실행할 작업의 순서를 나타냅니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">    steps:</font>    단계:</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+</font>      # $GITHUB_WORKSPACE에서 리포지토리를 체크아웃하여 작업에 액세스할 수 있습니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      - uses: actions/checkout@v2
+</font>      - 사용: 작업/체크아웃@v2
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      # Runs a single command using the runners shell
+</font>      # 러너 셸을 사용하여 단일 명령 실행
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      - name:</font>      - 이름:</font><font class="papago-parent"><font class="papago-source" style="display:none;"> Run a one-line script
+</font> 한 줄 스크립트 실행
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">        run: echo Hello, world!
+</font>        달려라: 에코 헬로, 월드!
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      # Runs a set of commands using the runners shell
+</font>      # 러너 셸을 사용하여 일련의 명령을 실행합니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">      - name:</font>      - 이름:</font><font class="papago-parent"><font class="papago-source" style="display:none;"> Run a multi-line script
+</font> 다중 줄 스크립트 실행
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">        run: |
+</font>        실행: |
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">          echo Add other actions to build,
+</font>          에코 빌드에 다른 작업을 추가합니다.
+</font><font class="papago-parent"><font class="papago-source" style="display:none;">          echo test, and deploy your project.</font>          에코 테스트 및 프로젝트 배포</font><font class="papago-parent"><font class="papago-source" style="display:none;">
+</font>
+
+</font>
